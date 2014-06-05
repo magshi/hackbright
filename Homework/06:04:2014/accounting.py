@@ -1,5 +1,5 @@
-def parse_sales_log():
-    sales_log = open("customer_orders.csv")
+def parse_sales_log(filename):
+    sales_log = open(filename)
 
     for line in sales_log:
         entries = line.split(',')
@@ -15,7 +15,9 @@ def parse_sales_log():
             print "%s (#%s) ordered %d melons and has paid $%r; customer owes $%.2f. \n" %(customer_name, customer_id, melons_ordered, customer_paid, customer_expected)
 
 def main():
-    parse_sales_log()
+    print "Enter log file: "
+    filename = raw_input()
+    parse_sales_log(filename)
 
 if __name__ == "__main__":
     main()
