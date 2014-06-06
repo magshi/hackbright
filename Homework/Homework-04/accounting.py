@@ -8,7 +8,7 @@ def main():
         melon_type = data[1]
         melon_count = int(data[2])
         melon_tallies[melon_type] += melon_count
-        
+
     f.close()
     melon_prices = { "musk": 1.15, "hybrid": 1.30, "watermelon": 1.75, "winter": 4.00 }
     total_revenue = 0
@@ -16,7 +16,7 @@ def main():
         price = melon_prices[melon_type]
         revenue = price * melon_tallies[melon_type]
         total_revenue += revenue
-        print "We sold %d %s melons at $%0.2f each for a total of $%0.2f" % (melon_tallies[melon_type], melon_type, price, revenue)
+        print "We sold %d %smelons at $%0.2f each for a total of $%0.2f" % (melon_tallies[melon_type], melon_type, price, revenue)
 
     print "******************************************"
     f = open("orders_with_sales.csv")
@@ -28,7 +28,7 @@ def main():
             sales[0] += float(data[3])
         else:
             sales[1] += float(data[3])
-    print "Salespeople generated $%0.2f in revenue." % sales[1]
+    print "Phone sales generated $%0.2f in revenue." % sales[1]
     print "Internet sales generated $%0.2f in revenue." % sales[0]
     if sales[1] > sales[0]:
         print "Guess there's some value to those salespeople after all."
