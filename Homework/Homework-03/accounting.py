@@ -5,7 +5,7 @@ def parse_sales_log(filename):
 
     for line in sales_log:
         entries = line.split(',')
-
+        
         customer_id = entries[0]
         customer_name = entries[1]
         melons_ordered = float(entries[2])
