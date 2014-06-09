@@ -1,3 +1,5 @@
+import random
+
 # Things you should be able to do.
 
 # Write a function that takes a list and returns a new list with only the odd numbers.
@@ -9,6 +11,7 @@ def all_odd(some_list):
     print list_of_odds
 
 all_odd([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+all_odd(random.sample(xrange(100), 10))
 
 # Write a function that takes a list and returns a new list with only the even numbers.
 def all_even(some_list):
@@ -19,6 +22,7 @@ def all_even(some_list):
     print list_of_evens
 
 all_even([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+all_even(random.sample(xrange(100), 10))
 
 # Write a function that takes a list of strings and returns a new list with all strings of length 4 or greater.
 def long_words(word_list):
@@ -44,8 +48,15 @@ smallest([800, 34, 750, 500, 347, 1946, 40, 1988, 55])
 
 # Write a function that finds the largest element in a list of integers and returns it.
 def largest(some_list):
-    # biggest_value = some_list[0]
-    pass
+    biggest_value = some_list[0]
+
+    for value in some_list:
+    	if value > biggest_value:
+    		biggest_value = value
+    print "The largest integer in %r is %d." % (some_list, biggest_value)
+
+largest([800, 3, 300, 4, 5, 6, 7, 6, 5, 444, 9, 22, 1946, 2000, 20, 14])
+largest(random.sample(xrange(100), 10))
 
 # Write a function that takes a list of numbers and returns a new list of all those numbers divided by two.
 def halvesies(some_list):
@@ -59,6 +70,7 @@ def halvesies(some_list):
     print list_of_halves
 
 halvesies([3, 6, 9, 12, 18, 24, 32, 48, 51, 96, 1988, 1946, 1951, 1984])
+halvesies(random.sample(xrange(100), 10))
 
 # Write a function that takes a list of words and returns a list of all the lengths of those words.
 def word_lengths(word_list):
@@ -77,6 +89,7 @@ def sum_numbers(numbers):
     print "The sum of the numbers you gave me is %d." % sum_of_list
 
 sum_numbers([5, 5, 5, 5, 5, 10, 10, 5, 30, 1, 1, 1, 2, 15])
+sum_numbers(random.sample(xrange(50), 10))
 
 # Write a function that multiplies all the numbers in a list together.
 def mult_numbers(numbers):
@@ -86,9 +99,9 @@ def mult_numbers(numbers):
     print "The product of the numbers you gave me is %d." % product
 
 mult_numbers([2, 4, 6, 8, 10])
+mult_numbers(random.sample(xrange(10), 5))
 
 # extra challenge: write a function that takes a string from a text file and breaks up every word into a separate string, then makes a list of all those strings :)
-
 def disjoin_strings(text):
     text = open("tmrw-and-tmrw-and-tmrw.txt")
     big_list_of_strings = []
@@ -101,7 +114,7 @@ string_list = disjoin_strings("tmrw-and-tmrw-and-tmrw.txt")
 
 # Write a function that joins all the strings in a list together (without using the join method) and returns a single string.
 def join_strings(list_of_strings):
-    print "I'm working!!!"
+    # print "I'm working!!!"
     print list_of_strings
 
     combined_string = ''
@@ -118,10 +131,10 @@ def average(numbers):
 
     for i in numbers:
         added_up += i
-        print added_up
 
     average = added_up / len(numbers)
     print "The average of %r is %r." % (numbers, average)
 
 average([2, 4, 6, 8])
 average([10, 20, 30, 40, 50, 60, 70, 80, 90, 100])
+average(random.sample(xrange(100), 10))
