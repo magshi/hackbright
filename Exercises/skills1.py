@@ -47,12 +47,13 @@ def largest(some_list):
     return None
 
 # # Write a function that takes a list of numbers and returns a new list of all those numbers divided by two.
-# # how to use floats in this if the number is odd?!
 def halvesies(some_list):
 	list_of_halves = []
 	for number in some_list:
-		
-		list_of_halves += [float(number / 2.0)]
+		if number % 2 != 0:
+			list_of_halves += [float(number/2.0)]
+		else:
+			list_of_halves += [number/2]
 	print list_of_halves
 
 halvesies([3, 6, 9, 12, 18, 24, 32, 48, 51, 96, 1988, 1946, 1951, 1984])
