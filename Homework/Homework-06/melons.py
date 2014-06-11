@@ -1,5 +1,5 @@
 melondex = {
-    Honeydew = {
+    'Honeydew': {
         'price': 0.99,
         'seedless': True,
         'flesh_color': 'green',
@@ -7,7 +7,7 @@ melondex = {
         'average_weight': 5.00
     },
 
-    Crenshaw = {
+    'Crenshaw': {
         'price': 2.00,
         'seedless': False,
         'flesh_color': 'who even knows',
@@ -15,7 +15,7 @@ melondex = {
         'average_weight': 5.00
     },
 
-    Crane = {
+    'Crane': {
         'price': 2.50,
         'seedless': False,
         'flesh_color': 'frenulum',
@@ -23,15 +23,15 @@ melondex = {
         'average_weight': 5.00
     },
 
-    Casaba = {
+    'Casaba': {
         'price': 2.50,
         'seedless': False,
         'flesh_color': 'spiders',
         'rind_color': 'grey',
         'average_weight': 5.00
-    }
+    },
 
-    Cantaloupe = {
+    'Cantaloupe': {
         'price': 0.99,
         'seedless': False,
         'flesh_color': 'orange',
