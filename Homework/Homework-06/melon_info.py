@@ -9,7 +9,7 @@ from melons import melondex
 
 def melon_report():
 	for melon, value in melondex.iteritems():
-		print melon, value
+		print melon.upper(), value
 
 def main():
 	melon_report()
