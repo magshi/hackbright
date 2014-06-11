@@ -7,18 +7,12 @@ from melons import melondex
 
 # from melons import melon_name, melon_seedless, melon_price
 
-# melondex = {
-#     "Honeydew": [0.99, True, 'orange', 'bumpy', 'melonheavy'],
-#     "Crenshaw": [2.00, False, 'fleshcolor', 'rindcolor', 'weight'],
-#     "Crane": [2.50, False, 'fleshcolor', 'rindcolor', 'weight'],
-#     "Casaba": [2.50, False, 'fleshcolor', 'rindcolor', 'weight'],
-#     "Cantaloupe": [0.99, False, 'fleshcolor', 'rindcolor', 'weight']
-# }
-
+def main():
+	melon_report()
+	
 def melon_report():
 	for melon in melondex.keys():
 		print "%s:\n" % melondex[melon]
-
 
 # def print_melon(name, seedless, price):
 # 	hashasnot = 'have'
