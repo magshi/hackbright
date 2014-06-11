@@ -2,22 +2,26 @@ from sys import argv
 from os.path import exists
 
 def count_letters(filename):
-	letter_tally = [0]*26
+    letter_tally = [0]*26
 
-	print letter_tally
-	print len(letter_tally)
+    print letter_tally
+    print len(letter_tally)
 
-	text = open(filename).lower()
-	print text
+    text = open(filename)
+    print text
 
-	# text = open(filename).read()
+    for line in text:
+        words = line.split()
+        print words
 
-	# for character in text:
-	# 	letter_tally[ord(character) - 97] += 1
-	# print letter_tally
+    # text = open(filename).read()
 
-def main():
-	count_letters("essay-on-criticism.txt")
+    # for character in text:
+    #   letter_tally[ord(character) - 97] += 1
+    # print letter_tally
+
+def main():    
+    count_letters("essay-on-criticism.txt")
 
 if __name__ == "__main__":
     main()
