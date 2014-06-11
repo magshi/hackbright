@@ -10,7 +10,7 @@ melondex = {
     'Crenshaw': {
         'price': 2.00,
         'seedless': False,
-        'flesh_color': 'who even knows',
+        'flesh_color': 'glitter, glitter everywhere',
         'rind_color': 'grey',
         'average_weight': 5.00
     },
@@ -27,7 +27,7 @@ melondex = {
         'price': 2.50,
         'seedless': False,
         'flesh_color': 'spiders',
-        'rind_color': 'grey',
+        'rind_color': 'houndstooth',
         'average_weight': 5.00
     },
 
