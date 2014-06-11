@@ -8,9 +8,8 @@ from melons import melondex
 # from melons import melon_name, melon_seedless, melon_price
 
 def melon_report():
-	for melon in melondex.keys():
-		print "%r"
-		print "%s:\n" % melondex[melon]
+	for melon, value in melondex.iteritems():
+		print melon, value
 
 def main():
 	melon_report()
