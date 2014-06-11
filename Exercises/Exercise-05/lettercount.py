@@ -1,24 +1,28 @@
 from sys import argv
 from os.path import exists
+import string
 
 def count_letters(filename):
+
     letter_tally = [0]*26
 
-    print letter_tally
-    print len(letter_tally)
+    contents = open(filename).read()
 
-    text = open(filename)
-    print text
+    for line in contents:
+        line = line.rstrip() # remove extra chars
+        line = line.lower() # lowercase everything
 
-    for line in text:
-        words = line.split()
-        print words
+        for char in line:
+            if ord(str(char)) >= 97 and ord(str(char)) <= 122:
+                letter_tally[ord(str(char)) - 97] += 1
+            else:
+                pass
 
-    # text = open(filename).read()
+    i = 0
 
-    # for character in text:
-    #   letter_tally[ord(character) - 97] += 1
-    # print letter_tally
+    while i < 26:
+        print string.ascii_lowercase[i], letter_tally[i]
+        i += 1
 
 def main():    
     count_letters("essay-on-criticism.txt")
