@@ -7,12 +7,13 @@ from melons import melondex
 
 # from melons import melon_name, melon_seedless, melon_price
 
-def main():
-	melon_report()
-	
 def melon_report():
 	for melon in melondex.keys():
+		print "%r"
 		print "%s:\n" % melondex[melon]
+
+def main():
+	melon_report()
 
 # def print_melon(name, seedless, price):
 # 	hashasnot = 'have'
@@ -26,4 +27,4 @@ def melon_report():
 #         print_melon(melon_name[i], melon_seedless[i], melon_price[i])
 
 if __name__ == '__main__':
-	melon_report()
+	main()
