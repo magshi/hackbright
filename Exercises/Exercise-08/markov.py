@@ -74,25 +74,46 @@ def make_text(chains):
             current_key = (current_key[1], next_word)
             random_output += " %s" % next_word
 
-    print len(random_output)
+    print "the output is currently %r characters" % len(random_output)
     print random_output
 
-    new_string = ''
+    new_string = ""
 
-    # if the string is a good length for Twitter and has a period
-    if len(random_output) > 110 and len(random_output) < 140 and '.' in random_output:
-        index_of_period = 0
-        for index, value in enumerate(random_output):
-            if value == '.':
-                index_of_period = index
-
-        new_string = random_output[:index_of_period] + '.'
-    # otherwise, add another tuple and then add a period
+    # if the string is between 110 and 140 characters
+    if len(random_output) > 120 and len(random_output) < 140:
+        # and has a period
+        if '.' in random_output:
+            # initialize the index of the period character to 0
+            location = 0
+            # find the index of the period
+            for index, value in enumerate(random_output):
+                if value == '.':
+                    # set the index equal to the index and pass it back
+                    location = index
+                    new_string = random_output[:location] + '.'
+        elif '?' in random_output:
+            location = 0
+            for index, value in enumerate(random_output):
+                if value == '?':
+                    location = index
+                    new_string = random_output[:location] + '?'
+        # elif ',' in random_output:
+        #     location = 0
+        #     for index, value in enumerate(random_output):
+        #         if value == ',':
+        #             location = index
+        #             new_string = random_output[:location] + '.'
+        # otherwise just tack a period on the end for God's sake END THIS
+        else:
+            while random_output < 140:
+                next_word = random.choice(chains[switch][current_key])
+                new_string = random_output + " " + next_word
+            new_string = random_output + "."
     else:
         print False
         next_word = random.choice(chains[switch][current_key])
-        random_output 
-
+        new_string = random_output + " " + next_word + "."
+    
     return new_string
 
 def main():
