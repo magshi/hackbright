@@ -5,8 +5,9 @@ import random
 import string
 
 def make_chains(corpus1, corpus2):
-    """Takes an input text as a string and returns a dictionary of
-    markov chains."""
+    """Takes input texts as strings, and returns dictionaries of
+    Markov chains."""
+    # this could probably all be written into a function
     text1 = open(corpus1)
     text2 = open(corpus2)
     
@@ -50,14 +51,16 @@ def make_text(chains):
 
     random_tuple = check_upper(chains, switch)
 
+    # random_output is a random tuple from one dictionary plus a random tuple from the other dictionary
     random_output = random_tuple[0] + ' ' + random_tuple[1]
     current_key = random_tuple
 
     i = 0
-
-    while i < 30:
+    # i = however many times you want the script to run. depends on how long you want your output to be
+    while i < 20:
         i += 1
         if chains[(switch + 1) % 2].get(current_key):
+            # flip the switch so script will access the other dictionary
             switch = (switch + 1) % 2
             next_word = random.choice(chains[switch][current_key])
             current_key = (current_key[1], next_word)
@@ -67,12 +70,22 @@ def make_text(chains):
             current_key = (current_key[1], next_word)
             random_output += " %s" % next_word
 
-    return random_output
+    index_of_period = 0
+    if len(random_output) > 100 and len(random_output) < 140:
+        for index, value in enumerate(random_output):
+            if value == '.':
+                index_of_period = index
+
+    new_string = random_output[:index_of_period] + '.'
+    return new_string
+    # return random_output[::-1]
 
 def main():
+    # runs the markov.py script and passes two input files as arguments
     args = sys.argv
     script, input_text1, input_text2 = args
     chain_list = make_chains(input_text1, input_text2)
+    # print chain_list
     random_text = make_text(chain_list)
     print random_text
 
