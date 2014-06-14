@@ -1,0 +1,41 @@
+---------------ORIGINAL CODE, ONE FILE SOURCE---------------
+
+make_chains(filename)
+    opens, reads, splits file into a list of words
+    adds key:value to dictionary OR adds value to list of words
+    dictionary = {(bigram):[list of words that follow]}
+
+make_text(dictionary)
+    chooses random bigram as start
+    appends random following_word to string
+    takes the second word in the original bigram plus the following word as a tuple and starts the loop again
+    loops until bigram not_in dictionary as key
+    prints string
+
+    random_sentence = (you, are) + 
+
+---------------TWO FILE SOURCES---------------
+
+make_chains(filename1, filename2)
+    opens, reads, splits files into lists of words
+    adds key:value to dictionaries OR adds value to list of words
+    dictionary_source1= {(bigram):[list of words that follow]}
+    dictionary_source2= {(bigram):[list of words that follow]}
+
+
+make_text(list containing dictionary1 and dictionary2)
+    takes a list of 2 dictionaries
+
+    switch=0
+    (choose dictionary randomly) choose list[switch] then choose random bigram as start, initialize string
+    append random following_word from list[switch + 1 %2] to string
+    make new tuple from tuple index[1] and following_word
+    switch += 1 % 2 
+
+
+---------------START WITH UPPER---------------
+
+start = random_tuple
+and if random_tuple[0][0] in string.uppercase
+    use it
+    else, choose another random tuple
