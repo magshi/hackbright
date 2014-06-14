@@ -74,8 +74,8 @@ def make_text(chains):
             current_key = (current_key[1], next_word)
             random_output += " %s" % next_word
 
-    print "the output is currently %r characters" % len(random_output)
-    print random_output
+    # print "the output is currently %r characters" % len(random_output)
+    # print random_output
 
     new_string = ""
 
@@ -110,11 +110,14 @@ def make_text(chains):
                 new_string = random_output + " " + next_word
             new_string = random_output + "."
     else:
-        print False
+        # print False
         next_word = random.choice(chains[switch][current_key])
         new_string = random_output + " " + next_word + "."
     
-    return new_string
+    if len(new_string) <= 140:
+        return new_string
+    else:
+        return False
 
 def main():
     # runs the markov.py script and passes two input files as arguments
@@ -124,6 +127,7 @@ def main():
     # print chain_list
     random_text = make_text(chain_list)
     print random_text
+    return random_text
 
 if __name__ == "__main__":
     main()

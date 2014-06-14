@@ -1,4 +1,8 @@
 import twitter
+import markov
+
+message = markov.main()
+print message
 
 api_file = open("lanakeys.txt").read()
 api_keys = api_file.split()
@@ -13,4 +17,4 @@ api = twitter.Api(consumer_key = api_dict['consumer_key'],
 	access_token_key = api_dict['access_token_key'],
 	access_token_secret = api_dict['access_token_secret'])
 
-print api.VerifyCredentials()
+status = api.PostUpdate(message)
