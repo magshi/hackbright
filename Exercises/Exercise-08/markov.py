@@ -68,19 +68,22 @@ def make_text(chains):
             switch = (switch + 1) % 2
             next_word = random.choice(chains[switch][current_key])
             current_key = (current_key[1], next_word)
+            print current_key
             random_output += " %s" % next_word
         else:
             next_word = random.choice(chains[switch][current_key])
             current_key = (current_key[1], next_word)
+            print current_key
             random_output += " %s" % next_word
 
+    print random_output
     # print "the output is currently %r characters" % len(random_output)
     # print random_output
 
     new_string = ""
 
     # if the string is between 110 and 140 characters
-    if len(random_output) > 120 and len(random_output) < 140:
+    if len(random_output) > 110 and len(random_output) < 140:
         # and has a period
         if '.' in random_output:
             # initialize the index of the period character to 0
@@ -116,8 +119,6 @@ def make_text(chains):
     
     if len(new_string) <= 140:
         return new_string
-    else:
-        return False
 
 def main():
     # runs the markov.py script and passes two input files as arguments
