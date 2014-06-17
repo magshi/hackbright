@@ -24,8 +24,21 @@ count_unique(string1)
 Given two lists, (without using the keyword 'in' or the method 'index')
 return a list of all common items shared between both lists
 """
-def common_items(list1, list2):
-    pass
+# def common_items(list1, list2):
+#     new_list = []
+#     i = 0
+
+#     if list1[i] == list2[i]
+
+#     if list1[i] == list2[i]:
+#         new_list += list1[i]
+#         i += 1
+#     else:
+#         i += 1
+
+#     print new_list
+
+# common_items(list1, list2)
 
 """
 Given two lists, (without using the keyword 'in' or the method 'index')
@@ -79,5 +92,11 @@ is          be
 man         matey
 
 Write a program that asks the user to type in a sentence and then
-print the sentece translated to pirate.
+print the sentence translated to pirate.
 """
+
+# cat_dictionary = {
+#     name: 'Morris'
+#     color: 'black'
+#     age: 3
+# }
