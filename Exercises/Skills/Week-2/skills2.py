@@ -10,13 +10,13 @@ the value
 Bonus: do the same for a file (i.e. twain.txt)
 """
 def count_unique(string1):
-    string_dict = {}
-    word_list = string1.split()
-    i = 0
-    for item in word_list:
-        string_dict[word_list[i]] = i
-        i += 1
-    print string_dict
+	string_dict = {}
+	word_list = string1.split()
+	i = 0
+	for item in word_list:
+		string_dict[word_list[i]] = i
+		i += 1
+	print string_dict
 
 count_unique(string1)
 
@@ -24,7 +24,9 @@ count_unique(string1)
 Given two lists, (without using the keyword 'in' or the method 'index')
 return a list of all common items shared between both lists
 """
-# def common_items(list1, list2):
+def common_items(list1, list2):
+	pass
+
 #     new_list = []
 #     i = 0
 
@@ -38,7 +40,7 @@ return a list of all common items shared between both lists
 
 #     print new_list
 
-# common_items(list1, list2)
+common_items(list1, list2)
 
 """
 Given two lists, (without using the keyword 'in' or the method 'index')
@@ -46,19 +48,34 @@ return a list of all common items shared between both lists. This time,
 use a dictionary as part of your solution.
 """
 def common_items2(list1, list2):
-    pass
+	dict1 = {}
+	dict2 = {}
+
+	for item in list1:
+		dict1[item] = item
+	print dict1
+
+	for item in list2:
+		dict2[item] = item
+	print dict2
+
+# common_items2(list1, list2)
 
 """
 Given a list of numbers, return list of number pairs that sum to zero
 """
 def sum_zero(list1):
-    pass
+	print list1
+
+# sum_zero(list1)
 
 """
 Given a list of words, return a list of words with duplicates removed
 """
 def find_duplicates(words):
-    pass
+	pass
+
+# find_duplicates(words)
 
 """
 Given a list of words, print the words in ascending order of length
@@ -66,7 +83,17 @@ Bonus: do it on a file instead of the list provided
 Bonus: print the words in alphabetical order in ascending order of length
 """
 def word_length(words):
-    pass
+    word_count = {}
+    alpha_list = []
+    for word in words:
+      if word in word_count:
+        word_count[word] += 1
+      else:
+        word_count[word] = 1
+    for key, value in word_count.iteritems():
+      print key, value
+
+word_length(words)
 
 """
 Here's a table of English to Pirate translations
@@ -95,8 +122,4 @@ Write a program that asks the user to type in a sentence and then
 print the sentence translated to pirate.
 """
 
-# cat_dictionary = {
-#     name: 'Morris'
-#     color: 'black'
-#     age: 3
-# }
+# see piratespeak.py

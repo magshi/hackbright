@@ -8,6 +8,7 @@ call.py - Telemarketing script that displays the next name
           an order of over 20 Watermelons.
 
 """
+import datetime
 
 # Load the customers from the passed filename
 # Return a dictionary containing the customer data
@@ -88,6 +89,7 @@ def main():
 		if order.get('num_watermelons', 0) > 20:
 			# Has this customer not been contacted yet?
 			customer = customers.get(order.get('customer_id', 0), 0)
+			# if customer['called'] == '':
 			if customer.get('called', '') == '':
 				# if they haven't been contacted yet, show me the next
 				# customer who I should call
@@ -97,10 +99,36 @@ def main():
 				# I want to access the key called 'called' and insert today's
 				# date. But I need to edit the actual csv file, not just the info
 				# I've pulled into my main function.
-				information = customers.get(order.get('customer_id'))
-				print information
-				customers
 
+				# I think I have to open the file again, I can't update the local
+				# dictionary. I have to manually reload the file.
+				csv_file = open('customers.csv').read()
+				print csv_file[0]
+
+				# items = csv_file.split(',')
+				# print items
+
+	# 				f = open(filename)
+
+	# # First line of the file should be the header, 
+	# #   split that into a list
+	# header = f.readline().rstrip().split(',')
+
+	# # Process each line in a file, create a new
+	# #   dict for each customer
+	# for line in f:
+	# 	data = line.rstrip().split(',')
+	# 	customer = {}
+
+	# 	# Loop through each column, adding the data
+	# 	#   to the dictionary using the header keys
+	# 	for i in range(len(header)):
+	# 		customer[header[i]] = data[i]
+
+	# 	# Add the customer to our dictionary by customer id
+	# 	customers[customer['customer_id']] = customer
+
+	# 			customer['called'] = datetime.datetime.now()
 				break
 
 if __name__ == '__main__':
