@@ -9,3 +9,7 @@ c, 4
 d, 6
 """
 d = {"q": 5, "m": 3, "z":2, "a": 10}
+
+def alphabetize_keys(d):
+	for key, value in d.iteritems():
+		pass

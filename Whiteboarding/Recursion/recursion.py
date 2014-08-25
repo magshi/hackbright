@@ -28,11 +28,17 @@ def multiply_list(l):
 
 # Return the factorial of n
 def factorial(n):
-    return 1
+    if n == 1:
+      return n
+    else:
+      return n * factorial(n - 1)
 
 # Count the number of elements in the list l without using loops or the len() function
 def count_list(l):
-    return 0
+    if not l:
+      return 0
+    else:
+      return count(l[1:]) + 1
 
 # Sum all of the elements in a list without using loops or the sum() function
 def sum_list(l):
@@ -45,7 +51,10 @@ def reverse(l):
 # Fibonacci returns the nth fibonacci number. The nth fibonacci number is
 # defined as fib(n) = fib(n-1) + fib(n-2)
 def fibonacci(n):
-    return 1
+    if n < 2:
+      return n
+    else:
+      return fibonacci(n-1) + fibonacci(n-2)
 
 # Finds the item i in the list l.... RECURSIVELY
 # Return the item if it is in the list or None if not found.
